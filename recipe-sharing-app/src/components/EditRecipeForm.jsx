@@ -20,8 +20,8 @@ const EditRecipeForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (!selectedId) return;
 
     updateRecipe(Number(selectedId), { title, description });
