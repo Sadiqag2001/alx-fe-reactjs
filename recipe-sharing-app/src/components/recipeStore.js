@@ -7,7 +7,7 @@ const useRecipeStore = create((set) => ({
       recipes: [...state.recipes, newRecipe],
     })),
   setRecipes: (recipes) => set({ recipes }),
-  editRecipe: (id, updatedData) =>
+  updateRecipe: (id, updatedData) =>
     set((state) => ({
       recipes: state.recipes.map((recipe)=>
         recipe.id === id ? {...recipe, ...updatedData} : recipe

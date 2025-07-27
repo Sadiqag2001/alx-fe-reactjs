@@ -3,7 +3,7 @@ import { useRecipeStore } from '../recipeStore';
 
 const EditRecipeForm = () => {
   const recipes = useRecipeStore((state) => state.recipes);
-  const editRecipe = useRecipeStore((state) => state.editRecipe);
+  const updateRecipe = useRecipeStore((state) => state.updateRecipe);
 
   const [selectedId, setSelectedId] = useState('');
   const [title, setTitle] = useState('');
@@ -24,7 +24,7 @@ const EditRecipeForm = () => {
     e.preventDefault();
     if (!selectedId) return;
 
-    editRecipe(Number(selectedId), { title, description });
+    updateRecipe(Number(selectedId), { title, description });
     alert('Recipe updated!');
   };
 
