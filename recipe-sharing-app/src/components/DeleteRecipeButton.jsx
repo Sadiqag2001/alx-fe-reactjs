@@ -11,7 +11,7 @@ const DeleteRecipeButton = ({ recipeId }) => {
   };
 
   return (
-    <button onClick={handleDelete} className='w-[150px] h-10 bg-blue-500 mx-auto rounded-2xl hover:bg-blue-600 focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 active:bg-blue-700'>
+    <button onClick={handleDelete} >
       Delete
     </button>
   );
