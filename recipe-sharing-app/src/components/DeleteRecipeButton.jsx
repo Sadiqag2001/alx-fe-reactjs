@@ -1,22 +1,20 @@
-import create from 'zustand';
+import { useNavigate } from 'react-router-dom';
+import useRecipeStore from './recipeStore';
 
-const useRecipeStore = create((set) => ({
-  recipes: [],
-  addRecipe: (newRecipe) =>
-    set((state) => ({
-      recipes: [...state.recipes, newRecipe],
-    })),
-  setRecipes: (recipes) => set({ recipes }),
-  editRecipe: (id, updatedData) =>
-    set((state) => ({
-      recipes: state.recipes.map((recipe) =>
-        recipe.id === id ? { ...recipe, ...updatedData } : recipe
-      ),
-    })),
-  deleteRecipe: (id) =>
-    set((state) => ({
-      recipes: state.recipes.filter((recipe) => recipe.id !== id),
-    })),
-}));
+const DeleteRecipeButton = ({ recipeId }) => {
+  const deleteRecipe = useRecipeStore(state => state.deleteRecipe);
+  const navigate = useNavigate();
 
-export { useRecipeStore };
+  const handleDelete = () => {
+    deleteRecipe(recipeId);
+    navigate('/');
+  };
+
+  return (
+    <button onClick={handleDelete} className='w-[150px] h-10 bg-blue-500 mx-auto rounded-2xl hover:bg-blue-600 focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 active:bg-blue-700'>
+      Delete
+    </button>
+  );
+};
+
+export default DeleteRecipeButton;
