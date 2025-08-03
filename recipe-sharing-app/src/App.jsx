@@ -7,23 +7,30 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
+import SearchBar from './components/SearchBar';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 
 function App() {
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
-      <h1>Recipe Sharing App</h1>
+    <div className='w-full h-full m-10 rounded-2xl'>
+      <div className=' bg-[#FAF7F3] shadow-md p-6 rounded-2xl w-full h-full'>
+      <h1 className='font-extrabold'>Recipe Sharing App</h1>
       <Router>   
         <Routes>
           <Route path= "/" element={
             <>
               <AddRecipeForm />
+              <SearchBar />
               <RecipeList />
+              <FavoritesList />
+              <RecommendationsList />
             </>
           } />
-        <Route path="/recipes/:id" element={<RecipeDetails />} />
+        <Route path="/:recipeId" element={<RecipeDetails />} />
        </Routes>  
       </Router>
-
+     </div>
     </div>
   );
 }

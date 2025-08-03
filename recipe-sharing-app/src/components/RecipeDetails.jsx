@@ -21,14 +21,14 @@ const RecipeDetails = () => {
       ) : (
         <>
           <h1 className='mx-auto text-2xl mb-2.5'>Recipe Details</h1>
-          <h1 className='mx-auto text-xl mb-1.5'>Title: {recipe.title}</h1>
-          <p className='mx-auto text-base mb-1.5'>Description: {recipe.description}</p>
+          <h3 className='mx-auto text-xl mb-1.5'>Title: {recipe.title}</h3>
+          <p className='mx-auto text-base mb-1.5 pb-3 '>Description: {recipe.description}</p>
 
-          <button onClick={() => setIsEditing(true)}>
+          <button className='bg-[#415E72] mr-2 shadow-md text-white'onClick={() => setIsEditing(true)}>
             Edit
           </button>
 
-          <DeleteRecipeButton recipeId={recipe.id} />
+          <DeleteRecipeButton  recipeId={recipe.id} />
         </>
       )}
     </div>

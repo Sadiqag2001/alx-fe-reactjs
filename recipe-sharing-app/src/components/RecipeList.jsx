@@ -5,7 +5,7 @@ const RecipeList = () => {
   const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
 
   return (
-    <div>
+    <div className='border rounded border-[#415E72]'>
       {filteredRecipes.length === 0 ? (
         <p>No recipes found.</p>
       ) : (
@@ -13,7 +13,7 @@ const RecipeList = () => {
           <div
             key={recipe.id}
            >
-            <h3>Title: {recipe.title}</h3>
+            <h3 className='text-bold'>Title: {recipe.title}</h3>
             <p>
               Description: {recipe.description}
             </p>

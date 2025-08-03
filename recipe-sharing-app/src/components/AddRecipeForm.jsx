@@ -15,24 +15,25 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
-      <h2>Add New Recipe</h2>
+    <form onSubmit={handleSubmit} className='mb-7'>
+      <h2 className='font-bold my-3 text-2xl'>Add New Recipe</h2>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Title"
         required
-        style={{ display: 'block', marginBottom: '10px', width: '100%' }}
+        className='block mb-3 w-full border rounded p-1 border-[#415E72]'
+        
       />
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
         required
-        style={{ display: 'block', marginBottom: '10px', width: '100%', height: '80px' }}
-      />
-      <button type="submit">Add Recipe</button>
+        className='block h-18 mb-3 w-full border rounded p-1 border-[#415E72]'
+        />
+      <button className='bg-[#415E72] text-[#FAF7F3] shadow-md' type="submit">Add Recipe</button>
     </form>
   );
 };
