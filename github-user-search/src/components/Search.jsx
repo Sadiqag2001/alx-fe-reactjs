@@ -51,14 +51,14 @@ const Search = () => {
           placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="border rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
+          className="border mb-3 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="number"
           placeholder="Min Repos"
           value={minRepos}
           onChange={(e) => setMinRepos(e.target.value)}
-          className="border rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
+          className="border mb-3 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
         />
         <button type='submit' className='text-white bg-[#1a1a1a]'>Search</button>
       </form>
