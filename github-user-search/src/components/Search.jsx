@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-const SearchBar = () => {
+const Search = () => {
   const [query, setQuery] = useState('');
 
   const handleSearch = () => {
@@ -21,4 +21,4 @@ const SearchBar = () => {
   )
 }
 
-export default SearchBar
+export default Search

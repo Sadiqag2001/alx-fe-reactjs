@@ -1,5 +1,5 @@
 import './App.css'
-import SearchBar from './components/SearchBar'
+import Search from './components/Search'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <div className=''>
       <div className='bg-[#f3fefe] p-10 rounded-xl text-[#333333]'>
         <h1>Github Search</h1>
-        <SearchBar />
+        <Search />
       </div>
     </div>
      </>
