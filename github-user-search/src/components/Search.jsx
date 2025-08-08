@@ -1,17 +1,13 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { fetchUserData } from '../services/githubService';
-
 
 const Search = () => {
   const [username, setUsername] = useState('');
   const [location, setLocation] = useState('');
   const [minRepos, setMinRepos] = useState('');
-  const [user, setUser] = useState(null);
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,50 +19,63 @@ const Search = () => {
 
     setLoading(true);
     setError('');
-    setUser([]);
+    setUsers([]);
 
     try {
       const data = await fetchUserData(username, location, minRepos);
       setUsers(data.items || []);
-     } catch (error) {
-      setError('Error fetching users. Try again.')
-    } finally{
+    } catch {
+      setError('Error fetching users. Try again.');
+    } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div>
-      <h1>Advanced Github User Search</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-2xl font-bold text-center mb-6">Advanced GitHub User Search</h1>
+
+      {/* Search Form */}
+      <form
+        onSubmit={handleSubmit}
+        className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white p-4 rounded-xl shadow-md"
+      >
         <input
-          className='border rounded-2xl m-6 py-2 px-8'
           type="text"
-          placeholder="Search GitHub username..."
+          placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
+          className="border rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
+        />
+        <input
           type="text"
           placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="border mb-3 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
+          className="border rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
         />
         <input
           type="number"
           placeholder="Min Repos"
           value={minRepos}
           onChange={(e) => setMinRepos(e.target.value)}
-          className="border mb-3 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
+          className="border rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-blue-500"
         />
-        <button type='submit' className='text-white bg-[#1a1a1a]'>Search</button>
+        <button
+          type="submit"
+          className="md:col-span-3 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        >
+          Search
+        </button>
       </form>
-       {loading && <p>Loading...</p>}
-      {error && <p className='text-red-600'>{error}</p>}
-      {user && (
-        <div className='mt-0.5'>
-          {users.map((user) => (
+
+      {/* Loading & Error */}
+      {loading && <p className="text-center mt-4">Loading...</p>}
+      {error && <p className="text-center text-red-500 mt-4">{error}</p>}
+
+      {/* Results */}
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {users.map((user) => (
           <div
             key={user.id}
             className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
@@ -76,7 +85,15 @@ const Search = () => {
               alt={user.login}
               className="w-20 h-20 rounded-full mx-auto"
             />
-            <h2 className="text-lg font-semibold text-center mt-2">{user.login}</h2>
+            <h2 className="text-lg font-semibold text-center mt-2">
+              {user.login}
+            </h2>
+            <p className="text-center text-gray-600">
+              {user.location || 'Location not available'}
+            </p>
+            <p className="text-center text-sm text-gray-500">
+              Public Repos: {user.public_repos}
+            </p>
             <a
               href={user.html_url}
               target="_blank"
@@ -87,10 +104,9 @@ const Search = () => {
             </a>
           </div>
         ))}
-        </div>
-      )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;
