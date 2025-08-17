@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import recipesData from "../data.json";
+import AddRecipeForm from "./AddRecipeForm";
 
 function HomePage() {
   const [recipes, setRecipes] = useState([]);
@@ -9,9 +10,17 @@ function HomePage() {
     setRecipes(recipesData);
   }, []);
 
+  const handleAddRecipe = (newRecipe) => {
+    setRecipes((prevRecipes) => [...prevRecipes, newRecipe]);
+  };
+
   return (
     <div className="p-5">
-      <h1 className="text-4xl font-bold mb-6">Recipes</h1>
+      <h1 className="text-5xl font-bold mb-6">Recipe Sharing</h1>
+     <div className="p-10 mb-5">
+     <AddRecipeForm onAddRecipe={handleAddRecipe}  />
+
+     </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {recipes.map((recipe) => (

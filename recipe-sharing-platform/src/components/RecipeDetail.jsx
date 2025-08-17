@@ -7,7 +7,6 @@ function RecipeDetail() {
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    // Convert id from string to number
     const foundRecipe = recipesData.find((r) => r.id === parseInt(id));
     setRecipe(foundRecipe);
   }, [id]);
@@ -22,7 +21,7 @@ function RecipeDetail() {
   }
 
   return (
-    <div className="p-6 w-full m-10 flex flex-col justify-center items-center ">
+    <div className="p-6 w-full flex flex-col justify-center items-center ">
       <img
         src={recipe.image}
         alt={recipe.title}
@@ -31,7 +30,6 @@ function RecipeDetail() {
       <h1 className="text-4xl font-bold mt-4">{recipe.title}</h1>
       <p className="mt-2 text-gray-600">{recipe.summary}</p>
 
-      {/* Ingredients */}
       <div className="mt-6">
         <h2 className="text-2xl font-semibold mb-2">Ingredients</h2>
         <ul className="list-disc list-inside space-y-1">
@@ -41,7 +39,6 @@ function RecipeDetail() {
         </ul>
       </div>
 
-      {/* Instructions */}
       <div className="mt-6">
         <h2 className="text-2xl font-semibold mb-2">Instructions</h2>
         <ol className="list-decimal list-inside space-y-2">
@@ -51,7 +48,7 @@ function RecipeDetail() {
         </ol>
       </div>
 
-      <Link to="/" className="block mt-6 text-white bg-gray-700 hover:bg-gray-800 rounded-3xl px-5 py-2 shadow-md ">
+      <Link to="/" className="block mt-6 text-white bg-gray-700 hover:bg-gray-800 rounded-lg px-5 py-3.5 shadow-md ">
         ← Back to Recipes
       </Link>
     </div>
