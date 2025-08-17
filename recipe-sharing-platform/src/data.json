@@ -1,20 +1,99 @@
 [
   {
     "id": 1,
-    "title": "Spaghetti Carbonara",
-    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "title": "Jollof Rice",
+    "summary": "A classic West African rice dish cooked in a rich tomato sauce with spices.",
+    "image": "https://en.wikipedia.org/wiki/Jollof_rice#/media/File:Jollof_Rice_with_Stew.jpg",
+    "ingredients": [
+      "3 cups long-grain parboiled rice",
+      "1/2 cup vegetable oil",
+      "6 large tomatoes (blended)",
+      "3 red bell peppers (blended)",
+      "2 onions (1 blended, 1 sliced)",
+      "2 scotch bonnet peppers",
+      "2 tbsp tomato paste",
+      "2 tsp thyme",
+      "2 tsp curry powder",
+      "4 cups chicken stock",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Blend tomatoes, peppers, and one onion into a smooth paste.",
+      "Heat oil in a pot, sauté sliced onions, then add tomato paste and fry for 2 minutes.",
+      "Add the blended mixture and fry until the oil separates.",
+      "Season with thyme, curry, and salt.",
+      "Add chicken stock and bring to a boil.",
+      "Stir in the rice, reduce heat, and cover tightly.",
+      "Cook on low heat until rice is tender and liquid absorbed."
+    ]
   },
   {
     "id": 2,
-    "title": "Chicken Tikka Masala",
-    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "title": "Egusi Soup",
+    "summary": "A hearty Nigerian soup made with ground melon seeds, vegetables, and meat or fish.",
+    "image": "https://teeskitchencatering.com/product/efo-elegusi-copy/",
+    "ingredients": [
+      "2 cups ground egusi (melon seeds)",
+      "1/2 cup palm oil",
+      "500g assorted meat (beef, goat, or chicken)",
+      "200g stockfish (pre-soaked)",
+      "2 tbsp ground crayfish",
+      "2 scotch bonnet peppers (blended)",
+      "2 cups chopped spinach or ugu leaves",
+      "1 onion (blended)",
+      "Seasoning cubes",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Blend egusi with a little water into a thick paste.",
+      "Heat palm oil in a pot, then fry the egusi paste for 5–7 minutes.",
+      "Add blended onions and pepper mixture, stir and cook.",
+      "Add meat, stockfish, crayfish, and stock/water.",
+      "Simmer until meat is tender.",
+      "Stir in the vegetables and cook for another 5 minutes."
+    ]
   },
   {
     "id": 3,
-    "title": "Jollof Rice",
-    "summary": "Jollof rice, is a rice dish from West Africa. The dish is typically made with long-grain rice, tomatoes, chilis, onions, spices, and sometimes other vegetables and/or meat in a single pot.",
-    "image": "https://en.wikipedia.org/wiki/Jollof_rice#/media/File:Jollof_Rice_with_Stew.jpg"
+    "title": "Suya",
+    "summary": "A popular Nigerian street food made with spicy grilled beef skewers.",
+    "image": "https://en.wikipedia.org/wiki/Suya#/media/File:SuyavarietiesTX.JPG",
+    "ingredients": [
+      "500g beef (thinly sliced)",
+      "3 tbsp suya spice mix (yaji)",
+      "2 tbsp groundnut oil",
+      "Salt to taste",
+      "Wooden skewers"
+    ],
+    "instructions": [
+      "Soak skewers in water for 30 minutes.",
+      "Thread beef slices onto skewers.",
+      "Rub with oil and coat with suya spice mix.",
+      "Grill over hot charcoal or in the oven until cooked through.",
+      "Serve hot with onions, tomatoes, and cabbage."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Moi Moi",
+    "summary": "A steamed Nigerian pudding made from blended beans, peppers, and spices.",
+    "image": "https://www.mydiasporakitchen.com/wp-content/uploads/2019/06/savingpng-19.png",
+    "ingredients": [
+      "2 cups peeled beans",
+      "2 red bell peppers",
+      "2 scotch bonnet peppers",
+      "1 onion",
+      "1/4 cup vegetable oil",
+      "2 seasoning cubes",
+      "2 boiled eggs (optional)",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Blend beans, peppers, and onion into a smooth paste.",
+      "Add oil, seasoning, and salt; mix well.",
+      "Pour mixture into greased ramekins or moi moi leaves.",
+      "Add sliced boiled eggs if using.",
+      "Steam for 45–60 minutes until firm."
+    ]
   }
 ]
