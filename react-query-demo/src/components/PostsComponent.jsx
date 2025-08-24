@@ -22,6 +22,9 @@ function PostsComponent() {
     queryFn: fetchPosts,
     staleTime: 5000,
     cacheTime: 1000 * 60 * 5,
+
+    refetchOnWindowFocus: true, 
+    keepPreviousData: true,
   });
 
   if (isLoading) return <p>Loading posts...</p>;
@@ -33,7 +36,7 @@ function PostsComponent() {
         onClick={() => refetch()}
         className="bg-blue-600 text-white px-4 py-2 rounded mb-4"
       >
-        Refetch Posts {isFetching && <span>( Updating...)</span>}
+        Refetch Posts {isFetching && <span>(Updating...)</span>}
       </button>
 
       <ul className="list-disc pl-6">
